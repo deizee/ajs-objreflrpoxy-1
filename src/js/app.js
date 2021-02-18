@@ -4,12 +4,15 @@ export default function orderByProps(obj, sortArr = []) {
   const sortObj = {};
   const restObj = curObj;
 
-  sortArr.forEach((el) => {
+  for (const el of sortArr) {
     if (curObj.hasOwnProperty.call(curObj, el)) {
-      sortObjArr.push({ [el]: curObj[el] });
+      sortObjArr.push({
+        key: el,
+        value: curObj[el],
+      });
       sortObj[el] = curObj[el];
     }
-  });
+  }
 
   for (const prop in sortObj) {
     if (curObj.hasOwnProperty.call(curObj, prop)) {
@@ -17,18 +20,14 @@ export default function orderByProps(obj, sortArr = []) {
     }
   }
 
-  const sortRestArr = Object.keys(restObj).sort((a, b) => restObj[b] - restObj[a]);
+  const sortRestArr = Object.keys(restObj).sort((a, b) => (a > b ? 1 : -1));
 
-  sortRestArr.forEach((key) => {
-    sortObjArr.push({ [key]: restObj[key] });
-  });
+  for (const key of sortRestArr) {
+    sortObjArr.push({
+      key,
+      value: restObj[key],
+    });
+  }
 
   return sortObjArr;
 }
-
-console.log(orderByProps(
-  {
-    name: 'мечник', health: 10, level: 2, attack: 80, defence: 40,
-  },
-  ['name', 'level'],
-));
