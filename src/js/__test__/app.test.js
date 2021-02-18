@@ -8,7 +8,6 @@ test('Возвращает корректное значение', () => {
     attack: 80,
     defence: 40,
   };
-
   expect(orderByProps(obj, ['name', 'level'])).toEqual([
     { key: 'name', value: 'мечник' },
     { key: 'level', value: 2 },
@@ -26,7 +25,6 @@ test('Корректно работает, если в пропсах перед
     attack: 80,
     defence: 40,
   };
-
   expect(orderByProps(obj, ['name', 'class'])).toEqual([
     { key: 'name', value: 'мечник' },
     { key: 'attack', value: 80 },
@@ -44,6 +42,5 @@ test('Не выдает ошибку, если не передать второ�
     attack: 80,
     defence: 40,
   };
-
   expect(() => orderByProps(obj)).not.toThrow();
 });
