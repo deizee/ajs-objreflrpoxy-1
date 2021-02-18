@@ -1,7 +1,7 @@
-# Домашнее задание к лекции «Классы, наследование»
+# Домашнее задание к лекции «Object, Reflection и Proxy»
 
-## Задача 2 "Методы"
+## Задача 1 "for ... in"
 
 ---------------------
 
-[![Build status](https://ci.appveyor.com/api/projects/status/h623205pj4qirjq4?svg=true)](https://ci.appveyor.com/project/deizee/ajs-proto-2)
+[![Build status](https://ci.appveyor.com/api/projects/status/3cdfvj00peyqbo2u?svg=true)](https://ci.appveyor.com/project/deizee/ajs-objreflrpoxy-1)
